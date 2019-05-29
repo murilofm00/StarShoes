@@ -865,14 +865,27 @@
                                               <Component id="pVendaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="qtdLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="corField" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                                              <Component id="marcaField" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                                              <Component id="modeloField" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                                              <Component id="pCustoField" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                                              <Component id="pVendaField" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                                              <Component id="qtdField" min="-2" pref="250" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="corField" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="marcaField" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="modeloField" alignment="0" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Component id="rsLabel1" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="rsLabel2" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="rsLabel3" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                          <Component id="pCustoField" min="-2" pref="233" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="pVendaField" max="32767" attributes="0"/>
+                                                      <Component id="qtdField" alignment="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -883,7 +896,7 @@
                               <Component id="pessoaisLabel2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="169" max="32767" attributes="0"/>
+                      <EmptySpace pref="182" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -893,38 +906,39 @@
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Component id="pessoaisLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="marcaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="marcaField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="modeloLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="modeloField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="corLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="corField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="pCustoLabel" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="pCustoField" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="marcaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="marcaField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="modeloLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="modeloField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="corLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="corField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="pCustoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rsLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="pCustoField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="pVendaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rsLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="pVendaField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="qtdLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rsLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="qtdField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="149" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -987,8 +1001,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Quantidade:"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="qtdField">
             </Component>
             <Component class="javax.swing.JLabel" name="cadSucess1">
               <Properties>
@@ -1062,6 +1074,28 @@
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format format="#0.00" subtype="-1" type="0"/>
                 </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="qtdField">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="#0" subtype="-1" type="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="rsLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="R$"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="rsLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="R$"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="rsLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="R$"/>
               </Properties>
             </Component>
           </SubComponents>

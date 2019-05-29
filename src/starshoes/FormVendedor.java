@@ -112,7 +112,6 @@ public class FormVendedor extends javax.swing.JFrame {
         pVendaLabel = new javax.swing.JLabel();
         corField = new javax.swing.JTextField();
         qtdLabel = new javax.swing.JLabel();
-        qtdField = new javax.swing.JTextField();
         cadSucess1 = new javax.swing.JLabel();
         showCod1 = new javax.swing.JLabel();
         cancelBtn1 = new javax.swing.JButton();
@@ -121,6 +120,10 @@ public class FormVendedor extends javax.swing.JFrame {
         modeloField = new javax.swing.JTextField();
         pCustoField = new javax.swing.JFormattedTextField();
         pVendaField = new javax.swing.JFormattedTextField();
+        qtdField = new javax.swing.JFormattedTextField();
+        rsLabel1 = new javax.swing.JLabel();
+        rsLabel2 = new javax.swing.JLabel();
+        rsLabel3 = new javax.swing.JLabel();
         desktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         vendaMenu = new javax.swing.JMenu();
@@ -723,6 +726,14 @@ public class FormVendedor extends javax.swing.JFrame {
 
         pVendaField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
 
+        qtdField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
+        rsLabel1.setText("R$");
+
+        rsLabel2.setText("R$");
+
+        rsLabel3.setText("R$");
+
         javax.swing.GroupLayout addPanel1Layout = new javax.swing.GroupLayout(addPanel1);
         addPanel1.setLayout(addPanel1Layout);
         addPanel1Layout.setHorizontalGroup(
@@ -751,18 +762,27 @@ public class FormVendedor extends javax.swing.JFrame {
                                         .addComponent(pCustoLabel)
                                         .addComponent(pVendaLabel)
                                         .addComponent(qtdLabel))
-                                    .addGap(37, 37, 37)
-                                    .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(corField, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(marcaField, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(modeloField, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(pCustoField, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(pVendaField, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(qtdField, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addGap(24, 24, 24)
+                                    .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(corField, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(marcaField, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(modeloField, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addPanel1Layout.createSequentialGroup()
+                                            .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(rsLabel1)
+                                                .addComponent(rsLabel2)
+                                                .addComponent(rsLabel3))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(addPanel1Layout.createSequentialGroup()
+                                                    .addGap(0, 0, Short.MAX_VALUE)
+                                                    .addComponent(pCustoField, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(pVendaField)
+                                                .addComponent(qtdField))))))))
                     .addGroup(addPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(pessoaisLabel2)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
         addPanel1Layout.setVerticalGroup(
             addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -770,31 +790,33 @@ public class FormVendedor extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(pessoaisLabel2)
                 .addGap(18, 18, 18)
-                .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(addPanel1Layout.createSequentialGroup()
-                        .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(marcaLabel)
-                            .addComponent(marcaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(modeloLabel)
-                            .addComponent(modeloField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(corLabel)
-                            .addComponent(corField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
-                        .addComponent(pCustoLabel))
+                .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(marcaLabel)
+                    .addComponent(marcaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modeloLabel)
+                    .addComponent(modeloField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(corLabel)
+                    .addComponent(corField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pCustoLabel)
+                    .addComponent(rsLabel1)
                     .addComponent(pCustoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pVendaLabel)
+                    .addComponent(rsLabel2)
                     .addComponent(pVendaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(qtdLabel)
+                    .addComponent(rsLabel3)
                     .addComponent(qtdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addGap(110, 110, 110)
                 .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(addPanel1Layout.createSequentialGroup()
                         .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1018,6 +1040,60 @@ public class FormVendedor extends javax.swing.JFrame {
         return verificado;
     }
     
+    public boolean verificarTenis() {
+        boolean verificado = true;
+        
+        if(marcaField.getText().equals("")) {
+            verificado = false;
+            marcaLabel.setForeground(Color.red);
+        }
+        else {
+            marcaLabel.setForeground(Color.black);
+        }
+        
+        if(modeloField.getText().equals("")) {
+            verificado = false;
+            modeloLabel.setForeground(Color.red);
+        }
+        else {
+            modeloLabel.setForeground(Color.black);
+        }
+        
+        if(corField.getText().equals("")) {
+            verificado = false;
+            corLabel.setForeground(Color.red);
+        }
+        else {
+            corLabel.setForeground(Color.black);
+        }
+        
+        if(pCustoField.getText().equals("")) {
+            verificado = false;
+            pCustoLabel.setForeground(Color.red);
+        }
+        else {
+            pCustoLabel.setForeground(Color.black);
+        }
+        
+        if(pVendaField.getText().equals("")) {
+            verificado = false;
+            pVendaLabel.setForeground(Color.red);
+        }
+        else {
+            pVendaLabel.setForeground(Color.black);
+        }
+        
+        if(qtdField.getText().equals("")) {
+            verificado = false;
+            qtdLabel.setForeground(Color.red);
+        }
+        else {
+            qtdLabel.setForeground(Color.black);
+        }
+        
+        return verificado;
+    }
+    
     public void limparCadastro() {
         System.out.println("nada");
         nomeField.setText("");
@@ -1225,6 +1301,15 @@ public class FormVendedor extends javax.swing.JFrame {
 
     private void cadastrarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtn1ActionPerformed
         // TODO add your handling code here:
+        if(verificarTenis()) {
+            Tenis tenis = new Tenis();
+            tenis.setMarca(marcaField.getText());
+            tenis.setModelo(modeloField.getText());
+            tenis.setCor(corField.getText());
+            tenis.setPrecoCusto(Float.parseFloat(pCustoField.getText().replace(',', '.')));
+            tenis.setPrecoVenda(Float.parseFloat(pVendaField.getText().replace(',', '.')));
+            tenis.setQtdeEstoque(Integer.parseInt(qtdField.getText()));
+            
     }//GEN-LAST:event_cadastrarBtn1ActionPerformed
 
     private void marcaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcaFieldActionPerformed
@@ -1356,9 +1441,12 @@ public class FormVendedor extends javax.swing.JFrame {
     private javax.swing.JLabel procurarLabel;
     private javax.swing.JMenuItem procurarVenda;
     private javax.swing.JMenuItem procurarVendedor;
-    private javax.swing.JTextField qtdField;
+    private javax.swing.JFormattedTextField qtdField;
     private javax.swing.JLabel qtdLabel;
     private javax.swing.JMenuItem realizarVenda;
+    private javax.swing.JLabel rsLabel1;
+    private javax.swing.JLabel rsLabel2;
+    private javax.swing.JLabel rsLabel3;
     private javax.swing.JLabel showCod;
     private javax.swing.JLabel showCod1;
     private javax.swing.JFormattedTextField telefoneField;

@@ -5,5 +5,3 @@ build/
 nbbuild/
 dist/
 nbdist/
-.nb-gradle/
-build/classes/starshoes/FormVendedor$17.class
