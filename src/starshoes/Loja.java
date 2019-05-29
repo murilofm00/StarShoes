@@ -72,6 +72,13 @@ public class Loja {
         return vendedores.get(vendedores.size()-1).getCodigo();
     }
     
+    public int adicionarTenis(Tenis tenis) {
+        estoque.add(tenis);
+        estoque.get(estoque.size()-1).criarCodigo(vendedores.size()-1);
+        
+        return estoque.get(estoque.size() -1).getCodigo();
+    }
+    
     public Cliente procurarCliente(int codigo) {
         return clientes.get(codigo - 50000);
     }

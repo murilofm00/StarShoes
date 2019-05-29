@@ -71,8 +71,7 @@ public class FormVendedor extends javax.swing.JFrame {
         codPesLabel = new javax.swing.JLabel();
         codPesField = new javax.swing.JFormattedTextField();
         cpfPesLabel = new javax.swing.JLabel();
-        cpfPesField = new javax.swing.JFormattedTextField();
-        pesquisarButton = new javax.swing.JButton();
+        pesquisarCodButton = new javax.swing.JButton();
         bairroField1 = new javax.swing.JTextField();
         cpfField1 = new javax.swing.JFormattedTextField();
         telefoneField1 = new javax.swing.JFormattedTextField();
@@ -102,6 +101,8 @@ public class FormVendedor extends javax.swing.JFrame {
         transField2 = new javax.swing.JTextField();
         transLabel3 = new javax.swing.JLabel();
         transField3 = new javax.swing.JTextField();
+        pesquisarCpfButton = new javax.swing.JButton();
+        cpfPesField = new javax.swing.JFormattedTextField();
         addTenisFrame = new javax.swing.JInternalFrame();
         addPanel1 = new javax.swing.JPanel();
         marcaLabel = new javax.swing.JLabel();
@@ -123,7 +124,33 @@ public class FormVendedor extends javax.swing.JFrame {
         qtdField = new javax.swing.JFormattedTextField();
         rsLabel1 = new javax.swing.JLabel();
         rsLabel2 = new javax.swing.JLabel();
-        rsLabel3 = new javax.swing.JLabel();
+        realizarVendaFrame = new javax.swing.JInternalFrame();
+        addPanel2 = new javax.swing.JPanel();
+        pessoaisLabel3 = new javax.swing.JLabel();
+        cancelBtn2 = new javax.swing.JButton();
+        cadastrarBtn2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jSpinner1 = new javax.swing.JSpinner();
         desktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         vendaMenu = new javax.swing.JMenu();
@@ -382,16 +409,10 @@ public class FormVendedor extends javax.swing.JFrame {
 
         cpfPesLabel.setText("CPF:");
 
-        cpfPesField.addActionListener(new java.awt.event.ActionListener() {
+        pesquisarCodButton.setText("Pesquisar");
+        pesquisarCodButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cpfPesFieldActionPerformed(evt);
-            }
-        });
-
-        pesquisarButton.setText("Pesquisar");
-        pesquisarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pesquisarButtonActionPerformed(evt);
+                pesquisarCodButtonActionPerformed(evt);
             }
         });
 
@@ -492,6 +513,19 @@ public class FormVendedor extends javax.swing.JFrame {
             }
         });
 
+        pesquisarCpfButton.setText("Pesquisar");
+        pesquisarCpfButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarCpfButtonActionPerformed(evt);
+            }
+        });
+
+        try {
+            cpfPesField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout pesquisarPanelLayout = new javax.swing.GroupLayout(pesquisarPanel);
         pesquisarPanel.setLayout(pesquisarPanelLayout);
         pesquisarPanelLayout.setHorizontalGroup(
@@ -559,18 +593,20 @@ public class FormVendedor extends javax.swing.JFrame {
                                             .addComponent(transField3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(transField2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addComponent(procurarLabel)
+                    .addComponent(pessoaisLabel1)
+                    .addComponent(enderecoLabel1)
                     .addGroup(pesquisarPanelLayout.createSequentialGroup()
                         .addComponent(codPesLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(codPesField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
+                        .addGap(18, 18, 18)
+                        .addComponent(pesquisarCodButton)
+                        .addGap(33, 33, 33)
                         .addComponent(cpfPesLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cpfPesField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
-                        .addComponent(pesquisarButton))
-                    .addComponent(pessoaisLabel1)
-                    .addComponent(enderecoLabel1))
+                        .addGap(18, 18, 18)
+                        .addComponent(cpfPesField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(pesquisarCpfButton)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         pesquisarPanelLayout.setVerticalGroup(
@@ -583,9 +619,10 @@ public class FormVendedor extends javax.swing.JFrame {
                     .addComponent(codPesLabel)
                     .addComponent(codPesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cpfPesLabel)
-                    .addComponent(cpfPesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pesquisarButton))
-                .addGap(26, 26, 26)
+                    .addComponent(pesquisarCodButton)
+                    .addComponent(pesquisarCpfButton)
+                    .addComponent(cpfPesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
                 .addGroup(pesquisarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pessoaisLabel1)
                     .addComponent(infPesLabel))
@@ -634,7 +671,7 @@ public class FormVendedor extends javax.swing.JFrame {
                     .addComponent(ufLabel1)
                     .addComponent(ufField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cepField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         transLabel1.setVisible(false);
@@ -675,12 +712,6 @@ public class FormVendedor extends javax.swing.JFrame {
 
         pVendaLabel.setText("Preço de venda:");
 
-        corField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                corFieldActionPerformed(evt);
-            }
-        });
-
         qtdLabel.setText("Quantidade:");
 
         cadSucess1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -705,18 +736,6 @@ public class FormVendedor extends javax.swing.JFrame {
             }
         });
 
-        marcaField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                marcaFieldActionPerformed(evt);
-            }
-        });
-
-        modeloField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modeloFieldActionPerformed(evt);
-            }
-        });
-
         pCustoField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
         pCustoField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -731,8 +750,6 @@ public class FormVendedor extends javax.swing.JFrame {
         rsLabel1.setText("R$");
 
         rsLabel2.setText("R$");
-
-        rsLabel3.setText("R$");
 
         javax.swing.GroupLayout addPanel1Layout = new javax.swing.GroupLayout(addPanel1);
         addPanel1.setLayout(addPanel1Layout);
@@ -770,8 +787,7 @@ public class FormVendedor extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addPanel1Layout.createSequentialGroup()
                                             .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                 .addComponent(rsLabel1)
-                                                .addComponent(rsLabel2)
-                                                .addComponent(rsLabel3))
+                                                .addComponent(rsLabel2))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(addPanel1Layout.createSequentialGroup()
@@ -814,7 +830,6 @@ public class FormVendedor extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(qtdLabel)
-                    .addComponent(rsLabel3)
                     .addComponent(qtdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(110, 110, 110)
                 .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -844,7 +859,209 @@ public class FormVendedor extends javax.swing.JFrame {
             .addComponent(addPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        realizarVendaFrame.setClosable(true);
+        realizarVendaFrame.setResizable(true);
+        realizarVendaFrame.setTitle("Adicionar Tênis");
+        realizarVendaFrame.setMinimumSize(new java.awt.Dimension(82, 24));
+        realizarVendaFrame.setVisible(true);
+
+        pessoaisLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        pessoaisLabel3.setText("Realizar venda");
+
+        cancelBtn2.setText("Cancelar");
+        cancelBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelBtn2ActionPerformed(evt);
+            }
+        });
+
+        cadastrarBtn2.setText("Cadastrar");
+        cadastrarBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarBtn2ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Cliente");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Vendedor");
+
+        jLabel3.setText("Produto");
+
+        jLabel4.setText("Modelo");
+
+        jLabel5.setText("Marca");
+
+        jLabel6.setText("Cor");
+
+        jLabel7.setText("Quantidade");
+
+        jLabel8.setText("Desconto");
+
+        jLabel9.setText("Preço");
+
+        jTextField3.setEditable(false);
+
+        jTextField4.setEditable(false);
+
+        jTextField5.setEditable(false);
+
+        jTextField6.setEditable(false);
+
+        jTextField7.setEditable(false);
+
+        jTextField8.setEditable(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel9))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField3)
+                    .addComponent(jTextField4)
+                    .addComponent(jTextField5)
+                    .addComponent(jTextField6)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(jTextField7))
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTextField10.setText("jTextField10");
+
+        jTextField11.setText("jTextField10");
+
+        javax.swing.GroupLayout addPanel2Layout = new javax.swing.GroupLayout(addPanel2);
+        addPanel2.setLayout(addPanel2Layout);
+        addPanel2Layout.setHorizontalGroup(
+            addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addPanel2Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(addPanel2Layout.createSequentialGroup()
+                .addGroup(addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pessoaisLabel3))
+                    .addGroup(addPanel2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanel2Layout.createSequentialGroup()
+                .addGroup(addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cadastrarBtn2)
+                        .addGap(18, 18, 18))
+                    .addGroup(addPanel2Layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addGroup(addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelBtn2))
+                .addGap(39, 39, 39))
+        );
+        addPanel2Layout.setVerticalGroup(
+            addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addPanel2Layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(pessoaisLabel3)
+                .addGap(18, 18, 18)
+                .addGroup(addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cancelBtn2)
+                    .addComponent(cadastrarBtn2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout realizarVendaFrameLayout = new javax.swing.GroupLayout(realizarVendaFrame.getContentPane());
+        realizarVendaFrame.getContentPane().setLayout(realizarVendaFrameLayout);
+        realizarVendaFrameLayout.setHorizontalGroup(
+            realizarVendaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        realizarVendaFrameLayout.setVerticalGroup(
+            realizarVendaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("StarShoes");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -1148,6 +1365,7 @@ public class FormVendedor extends javax.swing.JFrame {
     private void adicionarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarClienteActionPerformed
         tipoFrame = "Cliente";
         addPessoaFrame.setTitle("Adicionar Cliente");
+        limparCadastro();
         abrirFrame(addPessoaFrame);
     }//GEN-LAST:event_adicionarClienteActionPerformed
     
@@ -1164,6 +1382,7 @@ public class FormVendedor extends javax.swing.JFrame {
 
     private void adicionarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarVendedorActionPerformed
         tipoFrame = "Vendedor";
+        limparCadastro();
         addPessoaFrame.setTitle("Adicionar Vendedor");
         abrirFrame(addPessoaFrame);
     }//GEN-LAST:event_adicionarVendedorActionPerformed
@@ -1195,7 +1414,7 @@ public class FormVendedor extends javax.swing.JFrame {
     private void procurarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurarClienteActionPerformed
         // TODO add your handling code here:
         tipoFrame = "Cliente";
-        
+        limparCadastro();
         infPesLabel.setText("Inf. Cliente");
         infPesLabel.setVisible(true);
         
@@ -1216,7 +1435,7 @@ public class FormVendedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nomeField1ActionPerformed
 
-    private void pesquisarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarButtonActionPerformed
+    private void pesquisarCodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarCodButtonActionPerformed
         if(tipoFrame.equals("Cliente")){
             Cliente cliente = starShoes.procurarCliente(Integer.parseInt(codPesField.getText()));
             nomeField1.setText(cliente.getNome());
@@ -1247,11 +1466,7 @@ public class FormVendedor extends javax.swing.JFrame {
             transField2.setText(Float.toString(vendedor.getPorcentComissao()));
             transField3.setText(Float.toString(vendedor.calculaComissao()));
         }
-    }//GEN-LAST:event_pesquisarButtonActionPerformed
-
-    private void cpfPesFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfPesFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cpfPesFieldActionPerformed
+    }//GEN-LAST:event_pesquisarCodButtonActionPerformed
 
     private void codPesFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codPesFieldActionPerformed
         // TODO add your handling code here:
@@ -1271,7 +1486,8 @@ public class FormVendedor extends javax.swing.JFrame {
 
     private void procurarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurarVendedorActionPerformed
         // TODO add your handling code here:
-        tipoFrame = "Cliente";
+        tipoFrame = "Vendedor";
+        limparCadastro();
         
         infPesLabel.setText("Inf. Vendedor");
         infPesLabel.setVisible(true);
@@ -1291,10 +1507,6 @@ public class FormVendedor extends javax.swing.JFrame {
         abrirFrame(pesquisarFrame);
     }//GEN-LAST:event_procurarVendedorActionPerformed
 
-    private void corFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_corFieldActionPerformed
-
     private void cancelBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtn1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelBtn1ActionPerformed
@@ -1309,16 +1521,18 @@ public class FormVendedor extends javax.swing.JFrame {
             tenis.setPrecoCusto(Float.parseFloat(pCustoField.getText().replace(',', '.')));
             tenis.setPrecoVenda(Float.parseFloat(pVendaField.getText().replace(',', '.')));
             tenis.setQtdeEstoque(Integer.parseInt(qtdField.getText()));
+            starShoes.adicionarTenis(tenis);
             
+            showCod1.setText("Codigo do tênis: " + starShoes.adicionarTenis(tenis) + ".");
+            showCod1.setVisible(true);
+        
+            cadSucess1.setText("Tênis cadastrado com sucesso.");
+            cadSucess1.setVisible(true);
+        }
+        else {
+            System.out.println("Erro");
+        }
     }//GEN-LAST:event_cadastrarBtn1ActionPerformed
-
-    private void marcaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcaFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_marcaFieldActionPerformed
-
-    private void modeloFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeloFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modeloFieldActionPerformed
 
     private void adicionarTenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarTenisActionPerformed
         // TODO add your handling code here:
@@ -1329,6 +1543,52 @@ public class FormVendedor extends javax.swing.JFrame {
         // TODO add your handling code here:
         pVendaField.setText(String.format("%.2f", Float.parseFloat(pCustoField.getText().replace(',', '.')) * 2));
     }//GEN-LAST:event_calculaPrecoVenda
+
+    private void pesquisarCpfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarCpfButtonActionPerformed
+        // TODO add your handling code here:
+        if(tipoFrame.equals("Cliente")){
+            Cliente cliente = starShoes.procurarCliente(cpfPesField.getText());
+            nomeField1.setText(cliente.getNome());
+            cpfField1.setText(cliente.getCpf());
+            telefoneField1.setText(cliente.getTelefone());
+            enderecoField1.setText(cliente.getEndereco("rua"));
+            numField1.setText(cliente.getEndereco("num"));
+            compField1.setText(cliente.getEndereco("com"));
+            bairroField1.setText(cliente.getEndereco("bai"));
+            cidadeField1.setText(cliente.getEndereco("cid"));
+            cepField1.setText(cliente.getEndereco("cep"));
+            ufField1.setText(cliente.getEndereco("uf"));
+            transField1.setText(Float.toString(cliente.getSaldo()));
+        }
+        else {
+            Vendedor vendedor = starShoes.procurarVendedor(Integer.parseInt(codPesField.getText()));
+            nomeField1.setText(vendedor.getNome());
+            cpfField1.setText(vendedor.getCpf());
+            telefoneField1.setText(vendedor.getTelefone());
+            enderecoField1.setText(vendedor.getEndereco("rua"));
+            numField1.setText(vendedor.getEndereco("num"));
+            compField1.setText(vendedor.getEndereco("com"));
+            bairroField1.setText(vendedor.getEndereco("bai"));
+            cidadeField1.setText(vendedor.getEndereco("cid"));
+            cepField1.setText(vendedor.getEndereco("cep"));
+            ufField1.setText(vendedor.getEndereco("uf"));
+            transField1.setText(Float.toString(vendedor.getValorVendido()));
+            transField2.setText(Float.toString(vendedor.getPorcentComissao()));
+            transField3.setText(Float.toString(vendedor.calculaComissao()));
+        }
+    }//GEN-LAST:event_pesquisarCpfButtonActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void cadastrarBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtn2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastrarBtn2ActionPerformed
+
+    private void cancelBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtn2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelBtn2ActionPerformed
  
     /**
      * @param args the command line arguments
@@ -1368,6 +1628,7 @@ public class FormVendedor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addPanel;
     private javax.swing.JPanel addPanel1;
+    private javax.swing.JPanel addPanel2;
     private javax.swing.JInternalFrame addPessoaFrame;
     private javax.swing.JInternalFrame addTenisFrame;
     private javax.swing.JMenuItem adicionarCliente;
@@ -1381,8 +1642,10 @@ public class FormVendedor extends javax.swing.JFrame {
     private javax.swing.JLabel cadSucess1;
     public javax.swing.JButton cadastrarBtn;
     public javax.swing.JButton cadastrarBtn1;
+    private javax.swing.JButton cadastrarBtn2;
     private javax.swing.JButton cancelBtn;
     private javax.swing.JButton cancelBtn1;
+    private javax.swing.JButton cancelBtn2;
     private javax.swing.JFormattedTextField cepField;
     private javax.swing.JFormattedTextField cepField1;
     private javax.swing.JLabel cepLabel;
@@ -1414,7 +1677,29 @@ public class FormVendedor extends javax.swing.JFrame {
     private javax.swing.JLabel enderecoLabel;
     private javax.swing.JLabel enderecoLabel1;
     private javax.swing.JLabel infPesLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField marcaField;
     private javax.swing.JLabel marcaLabel;
     private javax.swing.JTextField modeloField;
@@ -1431,12 +1716,14 @@ public class FormVendedor extends javax.swing.JFrame {
     private javax.swing.JLabel pCustoLabel;
     private javax.swing.JFormattedTextField pVendaField;
     private javax.swing.JLabel pVendaLabel;
-    private javax.swing.JButton pesquisarButton;
+    private javax.swing.JButton pesquisarCodButton;
+    private javax.swing.JButton pesquisarCpfButton;
     private javax.swing.JInternalFrame pesquisarFrame;
     private javax.swing.JPanel pesquisarPanel;
     private javax.swing.JLabel pessoaisLabel;
     private javax.swing.JLabel pessoaisLabel1;
     private javax.swing.JLabel pessoaisLabel2;
+    private javax.swing.JLabel pessoaisLabel3;
     private javax.swing.JMenuItem procurarCliente;
     private javax.swing.JLabel procurarLabel;
     private javax.swing.JMenuItem procurarVenda;
@@ -1444,9 +1731,9 @@ public class FormVendedor extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField qtdField;
     private javax.swing.JLabel qtdLabel;
     private javax.swing.JMenuItem realizarVenda;
+    private javax.swing.JInternalFrame realizarVendaFrame;
     private javax.swing.JLabel rsLabel1;
     private javax.swing.JLabel rsLabel2;
-    private javax.swing.JLabel rsLabel3;
     private javax.swing.JLabel showCod;
     private javax.swing.JLabel showCod1;
     private javax.swing.JFormattedTextField telefoneField;

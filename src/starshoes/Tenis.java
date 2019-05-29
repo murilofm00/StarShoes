@@ -74,5 +74,7 @@ public class Tenis {
         this.precoCusto = precoCusto;
     }
     
-    
+    public void criarCodigo(int codigo) {
+        setCodigo(codigo + 20000);
+    }
 }
