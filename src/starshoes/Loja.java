@@ -19,6 +19,7 @@ public class Loja {
     private ArrayList <Tenis> estoque;
     private ArrayList <Vendedor> vendedores;
     private ArrayList <Cliente> clientes;
+    private ArrayList <Venda> vendas;
     
     public Loja() {
         estoque = new ArrayList<Tenis>();
@@ -74,7 +75,7 @@ public class Loja {
     
     public int adicionarTenis(Tenis tenis) {
         estoque.add(tenis);
-        estoque.get(estoque.size()-1).criarCodigo(vendedores.size()-1);
+        estoque.get(estoque.size()-1).criarCodigo(estoque.size()-1);
         
         return estoque.get(estoque.size() -1).getCodigo();
     }
@@ -103,5 +104,20 @@ public class Loja {
             }
         }
         return null;
+    }
+    
+    public Tenis procurarTenis(int codigo) {
+        return estoque.get(codigo - 20000);
+    }
+    
+    public int lancarVenda(Venda venda) {
+        vendas.add(venda);
+        vendas.get(vendas.size()-1).criarCodigo(vendas.size()-1);
+        
+        procurarTenis(venda.getTenis().getCodigo()).subtraiQtdeEstoque(venda.getQuantidade());
+        procurarVendedor(venda.getVendedor().getCodigo()).somaComissao(venda.getValorCompra());
+        procurarCliente(venda.getCliente().getCodigo()).addValorDeve(venda.calculaValorEmAberto());
+        
+        return vendas.get(vendas.size() -1).getCodigo();
     }
 }

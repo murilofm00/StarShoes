@@ -25,6 +25,10 @@ public class Tenis {
     public void setQtdeEstoque(int qtdeEstoque) {
         this.qtdeEstoque = qtdeEstoque;
     }
+    
+    public void subtraiQtdeEstoque(int quantidade) {
+        qtdeEstoque = qtdeEstoque - quantidade;
+    }
 
     public int getCodigo() {
         return codigo;

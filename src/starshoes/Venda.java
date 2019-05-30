@@ -5,7 +5,6 @@
  */
 package starshoes;
 
-import java.util.ArrayList;
 
 /**
  *
@@ -14,16 +13,20 @@ import java.util.ArrayList;
 public class Venda {
     private String data;
     private float valorCompra;
-    private float entrada;
-    private float porcentDesc;
+    private float valorPago;
     private float desconto;
+    private int quantidade;
+    private int codigo;
     private Cliente cliente;
     private Vendedor vendedor;
-    private ArrayList <Tenis> compras;
+    private Tenis tenis;
     
     public Venda() {
-        compras = new ArrayList<Tenis>();
+        tenis = new Tenis();
         valorCompra = 0;
+        cliente = new Cliente();
+        vendedor = new Vendedor();
+        tenis = new Tenis();
     }
 
     public String getData() {
@@ -47,20 +50,12 @@ public class Venda {
         this.valorCompra = valorCompra - this.desconto;
     }
     
-    public float getEntrada() {
-        return entrada;
+    public float getValorPago() {
+        return valorPago;
     }
 
-    public void setEntrada(float entrada) {
-        this.entrada = entrada;
-    }
-
-    public float getPorcentDesconto() {
-        return porcentDesc;
-    }
-
-    public void setPorcentDesconto(float porcentDesc) {
-        this.porcentDesc = porcentDesc;
+    public void setValorPago(float valorPago) {
+        this.valorPago = valorPago;
     }
     
     public float getDesconto() {
@@ -86,5 +81,40 @@ public class Venda {
     public void setVendedor(Vendedor vendedor) {
         this.vendedor = vendedor;
     }
+
+    public Tenis getTenis() {
+        return tenis;
+    }
+
+    public void setTenis(Tenis tenis) {
+        this.tenis = tenis;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
     
+    public float calculaValorEmAberto() {
+        return valorCompra - valorPago;
+    }
+    
+    public void criarCodigo(int codigo) {
+        setCodigo(codigo + 70000);
+    }
+    
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+    
+    public void pagarParcela(float parcela) {
+        valorPago += parcela;
+    }
 }

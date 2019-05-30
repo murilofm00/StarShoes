@@ -15,6 +15,7 @@ public class Vendedor extends Pessoa {
 
     public Vendedor() {
         porcentComissao = 3/100;
+        valorVendido = 0;
     }
     
     public float getPorcentComissao() {
@@ -31,6 +32,10 @@ public class Vendedor extends Pessoa {
 
     public void setValorVendido(float valorVendido) {
         this.valorVendido = valorVendido;
+    }
+    
+    public void somaComissao(float valor) {
+        valorVendido += valor;
     }
     
     @Override

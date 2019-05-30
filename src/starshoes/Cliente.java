@@ -12,12 +12,20 @@ package starshoes;
 public class Cliente extends Pessoa {
     private float valorDeve;
 
+    public Cliente() {
+        valorDeve = 0;
+    }
+    
     public float getValorDeve() {
         return valorDeve;
     }
 
-    public void setValorDeve(float valorDeve) {
-        this.valorDeve = valorDeve;
+    public void addValorDeve(float valorDeve) {
+        this.valorDeve += valorDeve;
+    }
+    
+    public void remValorDeve(float valor) {
+        valorDeve = valorDeve - valor;
     }
     
     @Override
