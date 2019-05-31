@@ -1223,7 +1223,7 @@
                           <Component id="entradaVenField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="venderBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cancelBtn2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1619,6 +1619,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Venda Efetuada."/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="venEfetuadaLabel.setVisible(false);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="codVenLabel">
               <Properties>
@@ -1630,12 +1633,15 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="C&#xf3;digo XXXXX."/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="codVenLabel.setVisible(false);"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JInternalFrame" name="procurrVendaFrame">
+    <Container class="javax.swing.JInternalFrame" name="procurarVendaFrame">
       <Properties>
         <Property name="closable" type="boolean" value="true"/>
         <Property name="resizable" type="boolean" value="true"/>
@@ -1708,7 +1714,7 @@
                                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField1" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Component id="parcelaFied" min="-2" pref="100" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
@@ -1741,7 +1747,7 @@
                           <Component id="valVenField1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="parcelaFied" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1932,7 +1938,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="12" max="32767" attributes="0"/>
+                          <EmptySpace pref="16" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2121,9 +2127,9 @@
                 <Property name="text" type="java.lang.String" value="Pagar Parcela"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="parcelaFied">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="parcelaFiedActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -2257,6 +2263,10 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="desktopPane">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane() {&#xa;    public void paintComponent(Graphics g) {&#xa;        g.drawImage(image,0,0,getWidth(),getHeight(),this);&#xa;    }&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(getClass().getResource(&quot;/imagens/walpaper.jpg&quot;));&#xa;Image image = icon.getImage();"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">

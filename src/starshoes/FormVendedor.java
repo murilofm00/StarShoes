@@ -6,6 +6,9 @@
 package starshoes;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -167,7 +170,7 @@ public class FormVendedor extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         venEfetuadaLabel = new javax.swing.JLabel();
         codVenLabel = new javax.swing.JLabel();
-        procurrVendaFrame = new javax.swing.JInternalFrame();
+        procurarVendaFrame = new javax.swing.JInternalFrame();
         addPanel3 = new javax.swing.JPanel();
         pessoaisLabel4 = new javax.swing.JLabel();
         cancelBtn3 = new javax.swing.JButton();
@@ -205,8 +208,14 @@ public class FormVendedor extends javax.swing.JFrame {
         descontoVenField1 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        desktopPane = new javax.swing.JDesktopPane();
+        parcelaFied = new javax.swing.JTextField();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/walpaper.jpg"));
+        Image image = icon.getImage();
+        desktopPane = new javax.swing.JDesktopPane() {
+            public void paintComponent(Graphics g) {
+                g.drawImage(image,0,0,getWidth(),getHeight(),this);
+            }
+        };
         jMenuBar1 = new javax.swing.JMenuBar();
         vendaMenu = new javax.swing.JMenu();
         realizarVenda = new javax.swing.JMenuItem();
@@ -1256,12 +1265,15 @@ public class FormVendedor extends javax.swing.JFrame {
                 .addGroup(addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(entradaVenField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addGap(18, 18, 18)
+                .addGap(14, 14, 14)
                 .addGroup(addPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(venderBtn)
                     .addComponent(cancelBtn2))
                 .addGap(5, 5, 5))
         );
+
+        venEfetuadaLabel.setVisible(false);
+        codVenLabel.setVisible(false);
 
         javax.swing.GroupLayout realizarVendaFrameLayout = new javax.swing.GroupLayout(realizarVendaFrame.getContentPane());
         realizarVendaFrame.getContentPane().setLayout(realizarVendaFrameLayout);
@@ -1274,11 +1286,11 @@ public class FormVendedor extends javax.swing.JFrame {
             .addComponent(addPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        procurrVendaFrame.setClosable(true);
-        procurrVendaFrame.setResizable(true);
-        procurrVendaFrame.setTitle("Adicionar Tênis");
-        procurrVendaFrame.setMinimumSize(new java.awt.Dimension(82, 24));
-        procurrVendaFrame.setVisible(true);
+        procurarVendaFrame.setClosable(true);
+        procurarVendaFrame.setResizable(true);
+        procurarVendaFrame.setTitle("Adicionar Tênis");
+        procurarVendaFrame.setMinimumSize(new java.awt.Dimension(82, 24));
+        procurarVendaFrame.setVisible(true);
 
         pessoaisLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         pessoaisLabel4.setText("Realizar venda");
@@ -1510,14 +1522,14 @@ public class FormVendedor extends javax.swing.JFrame {
                     .addComponent(codVenField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Pagar Parcela");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        parcelaFied.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                parcelaFiedActionPerformed(evt);
             }
         });
 
@@ -1561,7 +1573,7 @@ public class FormVendedor extends javax.swing.JFrame {
                                 .addGap(51, 51, 51)
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(parcelaFied, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(addPanel3Layout.createSequentialGroup()
                                 .addGap(117, 117, 117)
                                 .addComponent(venderBtn1)))))
@@ -1586,7 +1598,7 @@ public class FormVendedor extends javax.swing.JFrame {
                     .addComponent(valVenField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(parcelaFied, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(addPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(venderBtn1)
@@ -1596,14 +1608,14 @@ public class FormVendedor extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        javax.swing.GroupLayout procurrVendaFrameLayout = new javax.swing.GroupLayout(procurrVendaFrame.getContentPane());
-        procurrVendaFrame.getContentPane().setLayout(procurrVendaFrameLayout);
-        procurrVendaFrameLayout.setHorizontalGroup(
-            procurrVendaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout procurarVendaFrameLayout = new javax.swing.GroupLayout(procurarVendaFrame.getContentPane());
+        procurarVendaFrame.getContentPane().setLayout(procurarVendaFrameLayout);
+        procurarVendaFrameLayout.setHorizontalGroup(
+            procurarVendaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(addPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        procurrVendaFrameLayout.setVerticalGroup(
-            procurrVendaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        procurarVendaFrameLayout.setVerticalGroup(
+            procurarVendaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(addPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -1718,10 +1730,10 @@ public class FormVendedor extends javax.swing.JFrame {
     public void abrirFrame(javax.swing.JInternalFrame janela) {
         int lDesk = desktopPane.getWidth();
         int aDesk = desktopPane.getHeight();
-        janela.setSize(600, 600);
+        janela.setSize(janela.getPreferredSize());
         desktopPane.add(janela);
         janela.setVisible(true);
-        janela.setLocation(lDesk / 2 - 300, aDesk / 2 - 250);
+        janela.setLocation((desktopPane.getWidth()/2) - (janela.getWidth()/2), (desktopPane.getHeight()/2) - (janela.getHeight()/2));
     }
 
     public boolean verificarCadastro() {
@@ -1879,35 +1891,35 @@ public class FormVendedor extends javax.swing.JFrame {
         }
 
         int quantidade = Integer.parseInt(quantVenField.getText());
-        if (quantidade <= starShoes.procurarTenis(Integer.parseInt(produtoVenField.getText())).getQtdeEstoque() ) {
+        System.out.println(starShoes.procurarTenis(Integer.parseInt(produtoVenField.getText())).getQtdeEstoque());
+        if (starShoes.procurarTenis(Integer.parseInt(produtoVenField.getText())).getQtdeEstoque() > quantidade) {
+            quantVenLabel.setForeground(Color.black);
+        } else {
             verificado = false;
             quantVenLabel.setForeground(Color.red);
-        } else {
-            quantVenLabel.setForeground(Color.black);
         }
 
         float desconto = Float.parseFloat(descontoVenField.getText());
         float preco = Float.parseFloat(precoVenField.getText());
         if (starShoes.procurarTenis(Integer.parseInt(produtoVenField.getText())).getPrecoCusto() >= ((preco - desconto) / quantidade)) {
+            descontoVenLabel.setForeground(Color.black);
+        } else {
             verificado = false;
             descontoVenLabel.setForeground(Color.red);
-        } else {
-            descontoVenLabel.setForeground(Color.black);
         }
 
         return verificado;
     }
 
     public void limparCadastro() {
-        System.out.println("nada");
         nomeField.setText("");
-        cpfField.setText("   .   .   -  ");
-        telefoneField.setText("(  )      -    ");
+        cpfField.setValue(null);
+        telefoneField.setValue(null);
         enderecoField.setText("");
         numField.setText("");
         bairroField.setText("");
         cidadeField.setText("");
-        cepField.setText("     -   ");
+        cepField.setValue(null);
         ufField.setText("");
     }
 
@@ -1948,6 +1960,7 @@ public class FormVendedor extends javax.swing.JFrame {
 
     private void procurarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurarVendaActionPerformed
         // TODO add your handling code here:
+        abrirFrame(procurarVendaFrame);
     }//GEN-LAST:event_procurarVendaActionPerformed
 
     private void adicionarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarClienteActionPerformed
@@ -2104,7 +2117,6 @@ public class FormVendedor extends javax.swing.JFrame {
             tenis.setPrecoCusto(Float.parseFloat(pCustoField.getText().replace(',', '.')));
             tenis.setPrecoVenda(Float.parseFloat(pVendaField.getText().replace(',', '.')));
             tenis.setQtdeEstoque(Integer.parseInt(qtdField.getText()));
-            starShoes.adicionarTenis(tenis);
 
             showCod1.setText("Codigo do tênis: " + starShoes.adicionarTenis(tenis) + ".");
             showCod1.setVisible(true);
@@ -2140,7 +2152,7 @@ public class FormVendedor extends javax.swing.JFrame {
             cidadeField1.setText(cliente.getEndereco("cid"));
             cepField1.setText(cliente.getEndereco("cep"));
             ufField1.setText(cliente.getEndereco("uf"));
-            transField1.setText(Float.toString(cliente.getSaldo()));
+            transField1.setText(Float.toString(cliente.getValorDeve()));
         } else {
             Vendedor vendedor = starShoes.procurarVendedor(Integer.parseInt(codPesField.getText()));
             nomeField1.setText(vendedor.getNome());
@@ -2166,6 +2178,7 @@ public class FormVendedor extends javax.swing.JFrame {
     private void venderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venderBtnActionPerformed
         // TODO add your handling code here:
         if (verificarVenda()) {
+            System.out.println("Entrou no lançamento");
             Venda venda = new Venda();
             Cliente cliente;
             if (clienteVerField.getText().equals("")) {
@@ -2174,7 +2187,7 @@ public class FormVendedor extends javax.swing.JFrame {
                 cliente.setCpf(cpfVenField.getText());
                 cliente.setTelefone(telefoneVenField.getText());
             } else {
-                cliente = starShoes.procurarCliente(Integer.parseInt(clienteVenField.getText()));
+                cliente = starShoes.procurarCliente(Integer.parseInt(clienteVerField.getText()));
             }
             venda.setCliente(cliente);
 
@@ -2186,12 +2199,12 @@ public class FormVendedor extends javax.swing.JFrame {
             venda.setData(java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd-MM-yyyy")));
             venda.setDesconto(Float.parseFloat(descontoVenField.getText()));
             venda.setValorPago(Float.parseFloat(entradaVenField.getText()));
-            
+
             venda.setQuantidade(Integer.parseInt(quantVenField.getText()));
-            
+
             venEfetuadaLabel.setVisible(true);
             codVenLabel.setText("Código: " + starShoes.lancarVenda(venda));
-            
+            System.out.println("Acho q lançou");
         }
 
     }//GEN-LAST:event_venderBtnActionPerformed
@@ -2220,6 +2233,12 @@ public class FormVendedor extends javax.swing.JFrame {
             telefoneVenField.setEditable(true);
             entradaVenField.setEditable(false);
         }
+        else {
+            Cliente cliente = starShoes.procurarCliente(Integer.parseInt(clienteVerField.getText()));
+            clienteVenField.setText(cliente.getNome());
+            cpfVenField.setText(cliente.getCpf());
+            telefoneVenField.setText(cliente.getTelefone());
+        }
 
         if (vendedorVenField.getText().equals("") || produtoVenField.getText().equals("")) {
 
@@ -2238,7 +2257,7 @@ public class FormVendedor extends javax.swing.JFrame {
 
     private void quantVenFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_quantVenFieldFocusLost
         // TODO add your handling code here:
-        valVenField.setText(Float.toString(Float.parseFloat(precoVenField.getText()) * Float.parseFloat(quantVenField.getText()) - Float.parseFloat(descontoVenField.getText())));
+        valVenField.setText(Float.toString(Float.parseFloat(precoVenField.getText()) * Float.parseFloat(quantVenField.getText())));
     }//GEN-LAST:event_quantVenFieldFocusLost
 
     private void descontoVenFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descontoVenFieldFocusLost
@@ -2253,11 +2272,28 @@ public class FormVendedor extends javax.swing.JFrame {
 
     private void cancelBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtn3ActionPerformed
         // TODO add your handling code here:
-        Venda venda = starShoes.pro
+        Venda venda = starShoes.procurarVenda(Integer.parseInt(vendaField.getText()));
+
+        clienteVenField1.setText(venda.getCliente().getNome());
+        cpfVenField1.setText(venda.getCliente().getCpf());
+        telefoneVenField1.setText(venda.getCliente().getTelefone());
+        
+        vendVenField1.setText(venda.getVendedor().getNome());
+        codVenField1.setText(Integer.toString(venda.getVendedor().getCodigo()));
+
+        modeloVenField1.setText(venda.getTenis().getModelo());
+        marcaVenField1.setText(venda.getTenis().getMarca());
+        corVenField1.setText(venda.getTenis().getCor());
+        precoVenField1.setText(Float.toString(venda.getTenis().getPrecoVenda()));
+        quantVenField1.setText(Integer.toString(venda.getQuantidade()));
+        descontoVenField1.setText(Float.toString(venda.getDesconto()));
+        valVenField1.setText(Float.toString(venda.getValorCompra()));
+        entradaVenField1.setText(Float.toString(venda.calculaValorEmAberto()));
     }//GEN-LAST:event_cancelBtn3ActionPerformed
 
     private void venderBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venderBtn1ActionPerformed
         // TODO add your handling code here:
+        starShoes.pagarParcela(Integer.parseInt(vendaField.getText()), Float.parseFloat(parcelaFied.getText()));
     }//GEN-LAST:event_venderBtn1ActionPerformed
 
     private void vendaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vendaFieldActionPerformed
@@ -2284,9 +2320,9 @@ public class FormVendedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_descontoVenField1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void parcelaFiedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parcelaFiedActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_parcelaFiedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2424,7 +2460,6 @@ public class FormVendedor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField marcaField;
     private javax.swing.JLabel marcaLabel;
     private javax.swing.JTextField marcaVenField;
@@ -2445,6 +2480,7 @@ public class FormVendedor extends javax.swing.JFrame {
     private javax.swing.JLabel pCustoLabel;
     private javax.swing.JFormattedTextField pVendaField;
     private javax.swing.JLabel pVendaLabel;
+    private javax.swing.JTextField parcelaFied;
     private javax.swing.JButton pesquisarCodButton;
     private javax.swing.JButton pesquisarCpfButton;
     private javax.swing.JInternalFrame pesquisarFrame;
@@ -2459,8 +2495,8 @@ public class FormVendedor extends javax.swing.JFrame {
     private javax.swing.JMenuItem procurarCliente;
     private javax.swing.JLabel procurarLabel;
     private javax.swing.JMenuItem procurarVenda;
+    private javax.swing.JInternalFrame procurarVendaFrame;
     private javax.swing.JMenuItem procurarVendedor;
-    private javax.swing.JInternalFrame procurrVendaFrame;
     private javax.swing.JTextField produtoVenField;
     private javax.swing.JLabel produtoVenLabel;
     private javax.swing.JFormattedTextField qtdField;

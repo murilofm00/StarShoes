@@ -25,6 +25,7 @@ public class Loja {
         estoque = new ArrayList<Tenis>();
         vendedores = new ArrayList<Vendedor>();
         clientes = new ArrayList<Cliente>();
+        vendas = new ArrayList<Venda>();
     }
 
     public String getCnpj() {
@@ -75,9 +76,10 @@ public class Loja {
     
     public int adicionarTenis(Tenis tenis) {
         estoque.add(tenis);
+        //System.out.println("Q"+estoque.size());
         estoque.get(estoque.size()-1).criarCodigo(estoque.size()-1);
         
-        return estoque.get(estoque.size() -1).getCodigo();
+        return estoque.get(estoque.size()-1).getCodigo();
     }
     
     public Cliente procurarCliente(int codigo) {
@@ -110,6 +112,10 @@ public class Loja {
         return estoque.get(codigo - 20000);
     }
     
+    public Venda procurarVenda(int codigo) {
+        return vendas.get(codigo - 70000);
+    }
+    
     public int lancarVenda(Venda venda) {
         vendas.add(venda);
         vendas.get(vendas.size()-1).criarCodigo(vendas.size()-1);
@@ -119,5 +125,11 @@ public class Loja {
         procurarCliente(venda.getCliente().getCodigo()).addValorDeve(venda.calculaValorEmAberto());
         
         return vendas.get(vendas.size() -1).getCodigo();
+    }
+    
+    public void pagarParcela(int codigo, float parcela) {
+        Venda venda = procurarVenda(codigo);
+        venda.pagarParcela(parcela);
+        procurarCliente(venda.getCliente().getCodigo()).remValorDeve(venda.calculaValorEmAberto());
     }
 }
