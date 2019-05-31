@@ -9,7 +9,7 @@ package starshoes;
  *
  * @author Murilo Fernandes
  */
-public class Vendedor extends Pessoa {
+public class Vendedor extends Pessoa implements Comissao{
     private float porcentComissao;
     private float valorVendido;
 
